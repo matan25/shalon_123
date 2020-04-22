@@ -13,7 +13,7 @@ namespace WpfApplication8
         public List<Clients> GetClient()
         {
             return modelClient.GetClients();
-            ////////////////////////////////
+            //////////////////////////////
         }
     }
 }
