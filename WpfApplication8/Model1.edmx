@@ -1,0 +1,1123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Clients" />
+          </Key>
+          <Property Name="Id_Clients" Type="int" Nullable="false" />
+          <Property Name="company_id" Type="int" Nullable="false" />
+          <Property Name="factory_occupation_id" Type="int" Nullable="false" />
+          <Property Name="Buissnes Priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id_Company" />
+          </Key>
+          <Property Name="Id_Company" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="compnay_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="company_country" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="Id_Employee" />
+          </Key>
+          <Property Name="Id_Employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender_Id" Type="int" Nullable="false" />
+          <Property Name="employee_type_id" Type="int" Nullable="false" />
+          <Property Name="postal_code_id" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employee_type">
+          <Key>
+            <PropertyRef Name="Id_Employee_Type" />
+          </Key>
+          <Property Name="Id_Employee_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="salary" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expends_Report">
+          <Key>
+            <PropertyRef Name="Id_Expends_Report" />
+          </Key>
+          <Property Name="Id_Expends_Report" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="expends_type_id" Type="int" Nullable="false" />
+          <Property Name="note" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expends_Type">
+          <Key>
+            <PropertyRef Name="Id_Expends_Type" />
+          </Key>
+          <Property Name="Id_Expends_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Factory_Occupation">
+          <Key>
+            <PropertyRef Name="Id_Factory_Occupation" />
+          </Key>
+          <Property Name="Id_Factory_Occupation" Type="int" Nullable="false" />
+          <Property Name="factory_occupation_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Machines">
+          <Key>
+            <PropertyRef Name="Id_Machines" />
+          </Key>
+          <Property Name="Id_Machines" Type="int" Nullable="false" />
+          <Property Name="kind" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manufacture_Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="work_shifts_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order Details">
+          <Key>
+            <PropertyRef Name="Id_Order_Details" />
+          </Key>
+          <Property Name="Id_Order_Details" Type="int" Nullable="false" />
+          <Property Name="Order Date" Type="datetime" Nullable="false" />
+          <Property Name="Delivery Date" Type="datetime" Nullable="false" />
+          <Property Name="Machines_Id" Type="int" Nullable="false" />
+          <Property Name="production amount" Type="int" Nullable="false" />
+          <Property Name="products_id" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id_Orders" />
+          </Key>
+          <Property Name="Id_Orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order details_id" Type="int" Nullable="false" />
+          <Property Name="client_id" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Postal_Code_Worker">
+          <Key>
+            <PropertyRef Name="Id_Postal_Code_Worker" />
+          </Key>
+          <Property Name="Id_Postal_Code_Worker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="house_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id_Products" />
+          </Key>
+          <Property Name="Id_Products" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provided_Products">
+          <Key>
+            <PropertyRef Name="Id_Provided_Products" />
+          </Key>
+          <Property Name="Id_Provided_Products" Type="int" Nullable="false" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provider_Details">
+          <Key>
+            <PropertyRef Name="Id_Provider_Details" />
+          </Key>
+          <Property Name="Id_Provider_Details" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quantity_items" Type="int" Nullable="false" />
+          <Property Name="providing_date" Type="datetime" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="provided_products_id" Type="int" Nullable="false" />
+          <Property Name="provider_name_id" Type="int" Nullable="false" />
+          <Property Name="note" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provider_Name">
+          <Key>
+            <PropertyRef Name="Id_Provider_Name" />
+          </Key>
+          <Property Name="Id_Provider_Name" Type="int" Nullable="false" />
+          <Property Name="provider_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Work_Shifts">
+          <Key>
+            <PropertyRef Name="Id_Work_Shifts" />
+          </Key>
+          <Property Name="Id_Work_Shifts" Type="int" Nullable="false" />
+          <Property Name="Workindg_Date" Type="datetime" Nullable="false" />
+          <Property Name="Workers _Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shift_Manager" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Workers_Gender">
+          <Key>
+            <PropertyRef Name="Id_Worker_Gender" />
+          </Key>
+          <Property Name="Id_Worker_Gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Clients_Company">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_Company" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Factory_Occupation">
+          <End Role="Factory_Occupation" Type="Self.Factory_Occupation" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factory_Occupation">
+              <PropertyRef Name="Id_Factory_Occupation" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="factory_occupation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_employee_type">
+          <End Role="employee_type" Type="Self.employee_type" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee_type">
+              <PropertyRef Name="Id_Employee_Type" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="employee_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_Postal_Code_Worker">
+          <End Role="Postal_Code_Worker" Type="Self.Postal_Code_Worker" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postal_Code_Worker">
+              <PropertyRef Name="Id_Postal_Code_Worker" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="postal_code_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_Workers_Gender">
+          <End Role="Workers_Gender" Type="Self.Workers_Gender" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers_Gender">
+              <PropertyRef Name="Id_Worker_Gender" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="Gender_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expends_Report_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="Expends_Report" Type="Self.Expends_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Expends_Report">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expends_Report_Expends_Type">
+          <End Role="Expends_Type" Type="Self.Expends_Type" Multiplicity="1" />
+          <End Role="Expends_Report" Type="Self.Expends_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expends_Type">
+              <PropertyRef Name="Id_Expends_Type" />
+            </Principal>
+            <Dependent Role="Expends_Report">
+              <PropertyRef Name="expends_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machines_Work_Shifts">
+          <End Role="Work_Shifts" Type="Self.Work_Shifts" Multiplicity="1" />
+          <End Role="Machines" Type="Self.Machines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shifts">
+              <PropertyRef Name="Id_Work_Shifts" />
+            </Principal>
+            <Dependent Role="Machines">
+              <PropertyRef Name="work_shifts_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Machines">
+          <End Role="Machines" Type="Self.Machines" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Id_Machines" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="Machines_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id_Products" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="products_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Clients" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Order Details">
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order Details">
+              <PropertyRef Name="Id_Order_Details" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="order details_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_Provided_Products">
+          <End Role="Provided_Products" Type="Self.Provided_Products" Multiplicity="1" />
+          <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provided_Products">
+              <PropertyRef Name="Id_Provided_Products" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="provided_products_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_Provider_Name">
+          <End Role="Provider_Name" Type="Self.Provider_Name" Multiplicity="1" />
+          <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider_Name">
+              <PropertyRef Name="Id_Provider_Name" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="provider_name_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee_type" EntityType="Self.employee_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expends_Report" EntityType="Self.Expends_Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expends_Type" EntityType="Self.Expends_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factory_Occupation" EntityType="Self.Factory_Occupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Details" EntityType="Self.Order Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Postal_Code_Worker" EntityType="Self.Postal_Code_Worker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provided_Products" EntityType="Self.Provided_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider_Details" EntityType="Self.Provider_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider_Name" EntityType="Self.Provider_Name" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work_Shifts" EntityType="Self.Work_Shifts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workers_Gender" EntityType="Self.Workers_Gender" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clients_Company" Association="Self.FK_Clients_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Factory_Occupation" Association="Self.FK_Clients_Factory_Occupation">
+            <End Role="Factory_Occupation" EntitySet="Factory_Occupation" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_employee_type" Association="Self.FK_employee_employee_type">
+            <End Role="employee_type" EntitySet="employee_type" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_Postal_Code_Worker" Association="Self.FK_employee_Postal_Code_Worker">
+            <End Role="Postal_Code_Worker" EntitySet="Postal_Code_Worker" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_Workers_Gender" Association="Self.FK_employee_Workers_Gender">
+            <End Role="Workers_Gender" EntitySet="Workers_Gender" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expends_Report_employee" Association="Self.FK_Expends_Report_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Expends_Report" EntitySet="Expends_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expends_Report_Expends_Type" Association="Self.FK_Expends_Report_Expends_Type">
+            <End Role="Expends_Type" EntitySet="Expends_Type" />
+            <End Role="Expends_Report" EntitySet="Expends_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machines_Work_Shifts" Association="Self.FK_Machines_Work_Shifts">
+            <End Role="Work_Shifts" EntitySet="Work_Shifts" />
+            <End Role="Machines" EntitySet="Machines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Machines" Association="Self.FK_Order Details_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Products" Association="Self.FK_Order Details_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_employee" Association="Self.FK_Orders_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Order Details" Association="Self.FK_Orders_Order Details">
+            <End Role="Order Details" EntitySet="Order Details" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_employee" Association="Self.FK_Provider_Details_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_Provided_Products" Association="Self.FK_Provider_Details_Provided_Products">
+            <End Role="Provided_Products" EntitySet="Provided_Products" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_Provider_Name" Association="Self.FK_Provider_Details_Provider_Name">
+            <End Role="Provider_Name" EntitySet="Provider_Name" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Database1Model.Clients" />
+          <EntitySet Name="Company" EntityType="Database1Model.Company" />
+          <EntitySet Name="employee" EntityType="Database1Model.employee" />
+          <EntitySet Name="employee_type" EntityType="Database1Model.employee_type" />
+          <EntitySet Name="Expends_Report" EntityType="Database1Model.Expends_Report" />
+          <EntitySet Name="Expends_Type" EntityType="Database1Model.Expends_Type" />
+          <EntitySet Name="Factory_Occupation" EntityType="Database1Model.Factory_Occupation" />
+          <EntitySet Name="Machines" EntityType="Database1Model.Machines" />
+          <EntitySet Name="Order_Details" EntityType="Database1Model.Order_Details" />
+          <EntitySet Name="Orders" EntityType="Database1Model.Orders" />
+          <EntitySet Name="Postal_Code_Worker" EntityType="Database1Model.Postal_Code_Worker" />
+          <EntitySet Name="Products" EntityType="Database1Model.Products" />
+          <EntitySet Name="Provided_Products" EntityType="Database1Model.Provided_Products" />
+          <EntitySet Name="Provider_Details" EntityType="Database1Model.Provider_Details" />
+          <EntitySet Name="Provider_Name" EntityType="Database1Model.Provider_Name" />
+          <EntitySet Name="Work_Shifts" EntityType="Database1Model.Work_Shifts" />
+          <EntitySet Name="Workers_Gender" EntityType="Database1Model.Workers_Gender" />
+          <AssociationSet Name="FK_Clients_Company" Association="Database1Model.FK_Clients_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Factory_Occupation" Association="Database1Model.FK_Clients_Factory_Occupation">
+            <End Role="Factory_Occupation" EntitySet="Factory_Occupation" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Clients" Association="Database1Model.FK_Orders_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_employee_type" Association="Database1Model.FK_employee_employee_type">
+            <End Role="employee_type" EntitySet="employee_type" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_Postal_Code_Worker" Association="Database1Model.FK_employee_Postal_Code_Worker">
+            <End Role="Postal_Code_Worker" EntitySet="Postal_Code_Worker" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_Workers_Gender" Association="Database1Model.FK_employee_Workers_Gender">
+            <End Role="Workers_Gender" EntitySet="Workers_Gender" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expends_Report_employee" Association="Database1Model.FK_Expends_Report_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Expends_Report" EntitySet="Expends_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_employee" Association="Database1Model.FK_Orders_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_employee" Association="Database1Model.FK_Provider_Details_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expends_Report_Expends_Type" Association="Database1Model.FK_Expends_Report_Expends_Type">
+            <End Role="Expends_Type" EntitySet="Expends_Type" />
+            <End Role="Expends_Report" EntitySet="Expends_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machines_Work_Shifts" Association="Database1Model.FK_Machines_Work_Shifts">
+            <End Role="Work_Shifts" EntitySet="Work_Shifts" />
+            <End Role="Machines" EntitySet="Machines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Machines" Association="Database1Model.FK_Order_Details_Machines">
+            <End Role="Machines" EntitySet="Machines" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Products" Association="Database1Model.FK_Order_Details_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Order_Details" Association="Database1Model.FK_Orders_Order_Details">
+            <End Role="Order_Details" EntitySet="Order_Details" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_Provided_Products" Association="Database1Model.FK_Provider_Details_Provided_Products">
+            <End Role="Provided_Products" EntitySet="Provided_Products" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_Details_Provider_Name" Association="Database1Model.FK_Provider_Details_Provider_Name">
+            <End Role="Provider_Name" EntitySet="Provider_Name" />
+            <End Role="Provider_Details" EntitySet="Provider_Details" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Clients" />
+          </Key>
+          <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+          <Property Name="company_id" Type="Int32" Nullable="false" />
+          <Property Name="factory_occupation_id" Type="Int32" Nullable="false" />
+          <Property Name="Buissnes_Priority" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Company" Relationship="Database1Model.FK_Clients_Company" FromRole="Clients" ToRole="Company" />
+          <NavigationProperty Name="Factory_Occupation" Relationship="Database1Model.FK_Clients_Factory_Occupation" FromRole="Clients" ToRole="Factory_Occupation" />
+          <NavigationProperty Name="Orders" Relationship="Database1Model.FK_Orders_Clients" FromRole="Clients" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id_Company" />
+          </Key>
+          <Property Name="Id_Company" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="compnay_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="company_country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Database1Model.FK_Clients_Company" FromRole="Company" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="Id_Employee" />
+          </Key>
+          <Property Name="Id_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender_Id" Type="Int32" Nullable="false" />
+          <Property Name="employee_type_id" Type="Int32" Nullable="false" />
+          <Property Name="postal_code_id" Type="Int32" Nullable="false" />
+          <Property Name="deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee_type" Relationship="Database1Model.FK_employee_employee_type" FromRole="employee" ToRole="employee_type" />
+          <NavigationProperty Name="Postal_Code_Worker" Relationship="Database1Model.FK_employee_Postal_Code_Worker" FromRole="employee" ToRole="Postal_Code_Worker" />
+          <NavigationProperty Name="Workers_Gender" Relationship="Database1Model.FK_employee_Workers_Gender" FromRole="employee" ToRole="Workers_Gender" />
+          <NavigationProperty Name="Expends_Report" Relationship="Database1Model.FK_Expends_Report_employee" FromRole="employee" ToRole="Expends_Report" />
+          <NavigationProperty Name="Orders" Relationship="Database1Model.FK_Orders_employee" FromRole="employee" ToRole="Orders" />
+          <NavigationProperty Name="Provider_Details" Relationship="Database1Model.FK_Provider_Details_employee" FromRole="employee" ToRole="Provider_Details" />
+        </EntityType>
+        <EntityType Name="employee_type">
+          <Key>
+            <PropertyRef Name="Id_Employee_Type" />
+          </Key>
+          <Property Name="Id_Employee_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_employee_employee_type" FromRole="employee_type" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="Expends_Report">
+          <Key>
+            <PropertyRef Name="Id_Expends_Report" />
+          </Key>
+          <Property Name="Id_Expends_Report" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="expends_type_id" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_Expends_Report_employee" FromRole="Expends_Report" ToRole="employee" />
+          <NavigationProperty Name="Expends_Type" Relationship="Database1Model.FK_Expends_Report_Expends_Type" FromRole="Expends_Report" ToRole="Expends_Type" />
+        </EntityType>
+        <EntityType Name="Expends_Type">
+          <Key>
+            <PropertyRef Name="Id_Expends_Type" />
+          </Key>
+          <Property Name="Id_Expends_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Expends_Report" Relationship="Database1Model.FK_Expends_Report_Expends_Type" FromRole="Expends_Type" ToRole="Expends_Report" />
+        </EntityType>
+        <EntityType Name="Factory_Occupation">
+          <Key>
+            <PropertyRef Name="Id_Factory_Occupation" />
+          </Key>
+          <Property Name="Id_Factory_Occupation" Type="Int32" Nullable="false" />
+          <Property Name="factory_occupation_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Database1Model.FK_Clients_Factory_Occupation" FromRole="Factory_Occupation" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Machines">
+          <Key>
+            <PropertyRef Name="Id_Machines" />
+          </Key>
+          <Property Name="Id_Machines" Type="Int32" Nullable="false" />
+          <Property Name="kind" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacture_Department" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="work_shifts_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Work_Shifts" Relationship="Database1Model.FK_Machines_Work_Shifts" FromRole="Machines" ToRole="Work_Shifts" />
+          <NavigationProperty Name="Order_Details" Relationship="Database1Model.FK_Order_Details_Machines" FromRole="Machines" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Order_Details">
+          <Key>
+            <PropertyRef Name="Id_Order_Details" />
+          </Key>
+          <Property Name="Id_Order_Details" Type="Int32" Nullable="false" />
+          <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Delivery_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Machines_Id" Type="Int32" Nullable="false" />
+          <Property Name="production_amount" Type="Int32" Nullable="false" />
+          <Property Name="products_id" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Machines" Relationship="Database1Model.FK_Order_Details_Machines" FromRole="Order_Details" ToRole="Machines" />
+          <NavigationProperty Name="Products" Relationship="Database1Model.FK_Order_Details_Products" FromRole="Order_Details" ToRole="Products" />
+          <NavigationProperty Name="Orders" Relationship="Database1Model.FK_Orders_Order_Details" FromRole="Order_Details" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id_Orders" />
+          </Key>
+          <Property Name="Id_Orders" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_details_id" Type="Int32" Nullable="false" />
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Database1Model.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_Orders_employee" FromRole="Orders" ToRole="employee" />
+          <NavigationProperty Name="Order_Details" Relationship="Database1Model.FK_Orders_Order_Details" FromRole="Orders" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Postal_Code_Worker">
+          <Key>
+            <PropertyRef Name="Id_Postal_Code_Worker" />
+          </Key>
+          <Property Name="Id_Postal_Code_Worker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="street" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="house_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_employee_Postal_Code_Worker" FromRole="Postal_Code_Worker" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id_Products" />
+          </Key>
+          <Property Name="Id_Products" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_Details" Relationship="Database1Model.FK_Order_Details_Products" FromRole="Products" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Provided_Products">
+          <Key>
+            <PropertyRef Name="Id_Provided_Products" />
+          </Key>
+          <Property Name="Id_Provided_Products" Type="Int32" Nullable="false" />
+          <Property Name="product_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="deleted" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Provider_Details" Relationship="Database1Model.FK_Provider_Details_Provided_Products" FromRole="Provided_Products" ToRole="Provider_Details" />
+        </EntityType>
+        <EntityType Name="Provider_Details">
+          <Key>
+            <PropertyRef Name="Id_Provider_Details" />
+          </Key>
+          <Property Name="Id_Provider_Details" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quantity_items" Type="Int32" Nullable="false" />
+          <Property Name="providing_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="provided_products_id" Type="Int32" Nullable="false" />
+          <Property Name="provider_name_id" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_Provider_Details_employee" FromRole="Provider_Details" ToRole="employee" />
+          <NavigationProperty Name="Provided_Products" Relationship="Database1Model.FK_Provider_Details_Provided_Products" FromRole="Provider_Details" ToRole="Provided_Products" />
+          <NavigationProperty Name="Provider_Name" Relationship="Database1Model.FK_Provider_Details_Provider_Name" FromRole="Provider_Details" ToRole="Provider_Name" />
+        </EntityType>
+        <EntityType Name="Provider_Name">
+          <Key>
+            <PropertyRef Name="Id_Provider_Name" />
+          </Key>
+          <Property Name="Id_Provider_Name" Type="Int32" Nullable="false" />
+          <Property Name="provider_name1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Provider_Details" Relationship="Database1Model.FK_Provider_Details_Provider_Name" FromRole="Provider_Name" ToRole="Provider_Details" />
+        </EntityType>
+        <EntityType Name="Work_Shifts">
+          <Key>
+            <PropertyRef Name="Id_Work_Shifts" />
+          </Key>
+          <Property Name="Id_Work_Shifts" Type="Int32" Nullable="false" />
+          <Property Name="Workindg_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Workers__Amount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shift_Manager" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Machines" Relationship="Database1Model.FK_Machines_Work_Shifts" FromRole="Work_Shifts" ToRole="Machines" />
+        </EntityType>
+        <EntityType Name="Workers_Gender">
+          <Key>
+            <PropertyRef Name="Id_Worker_Gender" />
+          </Key>
+          <Property Name="Id_Worker_Gender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee" Relationship="Database1Model.FK_employee_Workers_Gender" FromRole="Workers_Gender" ToRole="employee" />
+        </EntityType>
+        <Association Name="FK_Clients_Company">
+          <End Type="Database1Model.Company" Role="Company" Multiplicity="1" />
+          <End Type="Database1Model.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_Company" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Factory_Occupation">
+          <End Type="Database1Model.Factory_Occupation" Role="Factory_Occupation" Multiplicity="1" />
+          <End Type="Database1Model.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factory_Occupation">
+              <PropertyRef Name="Id_Factory_Occupation" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="factory_occupation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Clients">
+          <End Type="Database1Model.Clients" Role="Clients" Multiplicity="1" />
+          <End Type="Database1Model.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Clients" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_employee_type">
+          <End Type="Database1Model.employee_type" Role="employee_type" Multiplicity="1" />
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee_type">
+              <PropertyRef Name="Id_Employee_Type" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="employee_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_Postal_Code_Worker">
+          <End Type="Database1Model.Postal_Code_Worker" Role="Postal_Code_Worker" Multiplicity="1" />
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postal_Code_Worker">
+              <PropertyRef Name="Id_Postal_Code_Worker" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="postal_code_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_Workers_Gender">
+          <End Type="Database1Model.Workers_Gender" Role="Workers_Gender" Multiplicity="1" />
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers_Gender">
+              <PropertyRef Name="Id_Worker_Gender" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="Gender_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expends_Report_employee">
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="1" />
+          <End Type="Database1Model.Expends_Report" Role="Expends_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Expends_Report">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_employee">
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="1" />
+          <End Type="Database1Model.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_employee">
+          <End Type="Database1Model.employee" Role="employee" Multiplicity="1" />
+          <End Type="Database1Model.Provider_Details" Role="Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="Id_Employee" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expends_Report_Expends_Type">
+          <End Type="Database1Model.Expends_Type" Role="Expends_Type" Multiplicity="1" />
+          <End Type="Database1Model.Expends_Report" Role="Expends_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expends_Type">
+              <PropertyRef Name="Id_Expends_Type" />
+            </Principal>
+            <Dependent Role="Expends_Report">
+              <PropertyRef Name="expends_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machines_Work_Shifts">
+          <End Type="Database1Model.Work_Shifts" Role="Work_Shifts" Multiplicity="1" />
+          <End Type="Database1Model.Machines" Role="Machines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shifts">
+              <PropertyRef Name="Id_Work_Shifts" />
+            </Principal>
+            <Dependent Role="Machines">
+              <PropertyRef Name="work_shifts_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Machines">
+          <End Type="Database1Model.Machines" Role="Machines" Multiplicity="1" />
+          <End Type="Database1Model.Order_Details" Role="Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Machines">
+              <PropertyRef Name="Id_Machines" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="Machines_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Products">
+          <End Type="Database1Model.Products" Role="Products" Multiplicity="1" />
+          <End Type="Database1Model.Order_Details" Role="Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id_Products" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="products_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Order_Details">
+          <End Type="Database1Model.Order_Details" Role="Order_Details" Multiplicity="1" />
+          <End Type="Database1Model.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Details">
+              <PropertyRef Name="Id_Order_Details" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="order_details_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_Provided_Products">
+          <End Type="Database1Model.Provided_Products" Role="Provided_Products" Multiplicity="1" />
+          <End Type="Database1Model.Provider_Details" Role="Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provided_Products">
+              <PropertyRef Name="Id_Provided_Products" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="provided_products_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_Details_Provider_Name">
+          <End Type="Database1Model.Provider_Name" Role="Provider_Name" Multiplicity="1" />
+          <End Type="Database1Model.Provider_Details" Role="Provider_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider_Name">
+              <PropertyRef Name="Id_Provider_Name" />
+            </Principal>
+            <Dependent Role="Provider_Details">
+              <PropertyRef Name="provider_name_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="Database1Model.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Buissnes_Priority" ColumnName="Buissnes Priority" />
+                <ScalarProperty Name="factory_occupation_id" ColumnName="factory_occupation_id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="Database1Model.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="company_country" ColumnName="company_country" />
+                <ScalarProperty Name="compnay_name" ColumnName="compnay_name" />
+                <ScalarProperty Name="Id_Company" ColumnName="Id_Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="Database1Model.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="postal_code_id" ColumnName="postal_code_id" />
+                <ScalarProperty Name="employee_type_id" ColumnName="employee_type_id" />
+                <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_number" ColumnName="id_number" />
+                <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee_type">
+            <EntityTypeMapping TypeName="Database1Model.employee_type">
+              <MappingFragment StoreEntitySet="employee_type">
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="Id_Employee_Type" ColumnName="Id_Employee_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expends_Report">
+            <EntityTypeMapping TypeName="Database1Model.Expends_Report">
+              <MappingFragment StoreEntitySet="Expends_Report">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="expends_type_id" ColumnName="expends_type_id" />
+                <ScalarProperty Name="Id_Expends_Report" ColumnName="Id_Expends_Report" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expends_Type">
+            <EntityTypeMapping TypeName="Database1Model.Expends_Type">
+              <MappingFragment StoreEntitySet="Expends_Type">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id_Expends_Type" ColumnName="Id_Expends_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Factory_Occupation">
+            <EntityTypeMapping TypeName="Database1Model.Factory_Occupation">
+              <MappingFragment StoreEntitySet="Factory_Occupation">
+                <ScalarProperty Name="factory_occupation_name" ColumnName="factory_occupation_name" />
+                <ScalarProperty Name="Id_Factory_Occupation" ColumnName="Id_Factory_Occupation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machines">
+            <EntityTypeMapping TypeName="Database1Model.Machines">
+              <MappingFragment StoreEntitySet="Machines">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="work_shifts_id" ColumnName="work_shifts_id" />
+                <ScalarProperty Name="Manufacture_Department" ColumnName="Manufacture_Department" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="Id_Machines" ColumnName="Id_Machines" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Details">
+            <EntityTypeMapping TypeName="Database1Model.Order_Details">
+              <MappingFragment StoreEntitySet="Order Details">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="production_amount" ColumnName="production amount" />
+                <ScalarProperty Name="Machines_Id" ColumnName="Machines_Id" />
+                <ScalarProperty Name="Delivery_Date" ColumnName="Delivery Date" />
+                <ScalarProperty Name="Order_Date" ColumnName="Order Date" />
+                <ScalarProperty Name="Id_Order_Details" ColumnName="Id_Order_Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Database1Model.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="order_details_id" ColumnName="order details_id" />
+                <ScalarProperty Name="Id_Orders" ColumnName="Id_Orders" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Postal_Code_Worker">
+            <EntityTypeMapping TypeName="Database1Model.Postal_Code_Worker">
+              <MappingFragment StoreEntitySet="Postal_Code_Worker">
+                <ScalarProperty Name="house_number" ColumnName="house_number" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="Id_Postal_Code_Worker" ColumnName="Id_Postal_Code_Worker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Database1Model.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id_Products" ColumnName="Id_Products" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provided_Products">
+            <EntityTypeMapping TypeName="Database1Model.Provided_Products">
+              <MappingFragment StoreEntitySet="Provided_Products">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="Id_Provided_Products" ColumnName="Id_Provided_Products" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provider_Details">
+            <EntityTypeMapping TypeName="Database1Model.Provider_Details">
+              <MappingFragment StoreEntitySet="Provider_Details">
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="provider_name_id" ColumnName="provider_name_id" />
+                <ScalarProperty Name="provided_products_id" ColumnName="provided_products_id" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="providing_date" ColumnName="providing_date" />
+                <ScalarProperty Name="quantity_items" ColumnName="quantity_items" />
+                <ScalarProperty Name="Id_Provider_Details" ColumnName="Id_Provider_Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provider_Name">
+            <EntityTypeMapping TypeName="Database1Model.Provider_Name">
+              <MappingFragment StoreEntitySet="Provider_Name">
+                <ScalarProperty Name="provider_name1" ColumnName="provider_name" />
+                <ScalarProperty Name="Id_Provider_Name" ColumnName="Id_Provider_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work_Shifts">
+            <EntityTypeMapping TypeName="Database1Model.Work_Shifts">
+              <MappingFragment StoreEntitySet="Work_Shifts">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Shift_Manager" ColumnName="Shift_Manager" />
+                <ScalarProperty Name="Workers__Amount" ColumnName="Workers _Amount" />
+                <ScalarProperty Name="Workindg_Date" ColumnName="Workindg_Date" />
+                <ScalarProperty Name="Id_Work_Shifts" ColumnName="Id_Work_Shifts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers_Gender">
+            <EntityTypeMapping TypeName="Database1Model.Workers_Gender">
+              <MappingFragment StoreEntitySet="Workers_Gender">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Id_Worker_Gender" ColumnName="Id_Worker_Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="37b3025316724032ae73e67f801dbf0a" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.Clients" Width="1.5" PointX="6" PointY="22.75" />
+        <EntityTypeShape EntityType="Database1Model.Company" Width="1.5" PointX="3.75" PointY="22.125" />
+        <EntityTypeShape EntityType="Database1Model.employee" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="Database1Model.employee_type" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Database1Model.Expends_Report" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="Database1Model.Expends_Type" Width="1.5" PointX="3" PointY="13.375" />
+        <EntityTypeShape EntityType="Database1Model.Factory_Occupation" Width="1.5" PointX="3.75" PointY="24.625" />
+        <EntityTypeShape EntityType="Database1Model.Machines" Width="1.5" PointX="3.75" PointY="16.25" />
+        <EntityTypeShape EntityType="Database1Model.Order_Details" Width="1.5" PointX="6" PointY="17.25" />
+        <EntityTypeShape EntityType="Database1Model.Orders" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="Database1Model.Postal_Code_Worker" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="Database1Model.Products" Width="1.5" PointX="3.75" PointY="19.375" />
+        <EntityTypeShape EntityType="Database1Model.Provided_Products" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Database1Model.Provider_Details" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.Provider_Name" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="Database1Model.Work_Shifts" Width="1.5" PointX="1.5" PointY="16.25" />
+        <EntityTypeShape EntityType="Database1Model.Workers_Gender" Width="1.5" PointX="0.75" PointY="5.375" />
+        <AssociationConnector Association="Database1Model.FK_Clients_Company" />
+        <AssociationConnector Association="Database1Model.FK_Clients_Factory_Occupation" />
+        <AssociationConnector Association="Database1Model.FK_Orders_Clients" />
+        <AssociationConnector Association="Database1Model.FK_employee_employee_type" />
+        <AssociationConnector Association="Database1Model.FK_employee_Postal_Code_Worker" />
+        <AssociationConnector Association="Database1Model.FK_employee_Workers_Gender" />
+        <AssociationConnector Association="Database1Model.FK_Expends_Report_employee" />
+        <AssociationConnector Association="Database1Model.FK_Orders_employee" />
+        <AssociationConnector Association="Database1Model.FK_Provider_Details_employee" />
+        <AssociationConnector Association="Database1Model.FK_Expends_Report_Expends_Type" />
+        <AssociationConnector Association="Database1Model.FK_Machines_Work_Shifts" />
+        <AssociationConnector Association="Database1Model.FK_Order_Details_Machines" />
+        <AssociationConnector Association="Database1Model.FK_Order_Details_Products" />
+        <AssociationConnector Association="Database1Model.FK_Orders_Order_Details" />
+        <AssociationConnector Association="Database1Model.FK_Provider_Details_Provided_Products" />
+        <AssociationConnector Association="Database1Model.FK_Provider_Details_Provider_Name" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

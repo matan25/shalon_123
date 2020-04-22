@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApplication8.AddWorker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="AddWorker" Height="560" Width="600">
+    <Grid>
+        <Grid Margin="9,5,25,145">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="374*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tNumberID" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" Margin="95,20,0,0" FontFamily="Arial" TextChanged="TName_TextChanged" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tPhone" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Margin="98,147,0,0" FontFamily="Arial" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="tCity" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Margin="96,278,0,0" FontFamily="Arial" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="tStreet" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="189,10,0,0" FontFamily="Arial" Grid.Column="2"/>
+            <TextBox x:Name="tNumberHouse" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="189,81,0,0" FontFamily="Arial" Grid.Column="2"/>
+            <Button  x:Name="tButton" Content="submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="184" Margin="36,369,0,-63" Height="73" Click="Button_Click" Grid.Column="2"/>
+            <TextBox x:Name="tSalary" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="191,219,0,0" FontFamily="Arial" Grid.Column="2"/>
+            <TextBox x:Name="tType" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="191,147,0,0" FontFamily="Arial" Grid.Column="2"/>
+            <TextBox x:Name="tName_Copy" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="89" Margin="95,0,0,258" FontFamily="Arial" TextChanged="TName_TextChanged" Grid.ColumnSpan="2" RenderTransformOrigin="0.563,0.573"/>
+            <Label Content="Number-Id:" HorizontalAlignment="Left" Height="39" Margin="10,20,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47"/>
+            <Label Content="Name:" HorizontalAlignment="Left" Height="39" Margin="10,81,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47"/>
+            <Label Content="Phone:" HorizontalAlignment="Left" Height="39" Margin="10,147,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47"/>
+            <Label Content="Gender:" HorizontalAlignment="Left" Height="39" Margin="10,205,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47"/>
+            <Label Content="City:" Height="39" Margin="10,279,48,0" VerticalAlignment="Top" RenderTransformOrigin="0.804,0.47"/>
+            <Label Content="Street:" HorizontalAlignment="Left" Height="39" Margin="82,10,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47" Grid.Column="2"/>
+            <Label Content="number house:" HorizontalAlignment="Left" Height="39" Margin="67,82,0,0" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.804,0.47" Grid.Column="2"/>
+            <Label Content="Salary:" HorizontalAlignment="Left" Height="39" Margin="82,148,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47" Grid.Column="2"/>
+            <Label Content="Type:" HorizontalAlignment="Left" Height="39" Margin="82,220,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.804,0.47" Grid.Column="2"/>
+            <ComboBox x:Name="cGender" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="95,204,0,0" VerticalAlignment="Top" Width="96" Height="43">
+                <ComboBoxItem Content="Male" Height="31"/>
+                <ComboBoxItem Content="Female" Height="31"/>
+            </ComboBox>
+            <ComboBox x:Name="cDeleted" HorizontalAlignment="Left" Margin="202,282,0,0" VerticalAlignment="Top" Width="96" Height="43" Grid.Column="2">
+                <ComboBoxItem Content="Active" Height="31"/>
+                <ComboBoxItem Content="Non-Active" Height="31"/>
+            </ComboBox>
+            <Label Content="Status:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="74,291,0,0" Height="34" Width="79"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
