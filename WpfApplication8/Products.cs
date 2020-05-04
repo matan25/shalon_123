@@ -22,7 +22,7 @@ namespace WpfApplication8
     
         public int Id_Products { get; set; }
         public string name { get; set; }
-        public string price { get; set; }
+        public int price { get; set; }
         public string deleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

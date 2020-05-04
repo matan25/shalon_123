@@ -20,7 +20,6 @@ namespace WpfApplication8
     /// </summary>
     public partial class MainWindow : Window
     {
-        private EmployeeControlerr employeeController = new EmployeeControlerr();
         private Database1Entities1 db1 = new Database1Entities1();
         public MainWindow()
         {
@@ -30,23 +29,27 @@ namespace WpfApplication8
         private void Button_Employee_System(object sender, RoutedEventArgs e)
         {
             EmployeeSystem es = new WpfApplication8.EmployeeSystem();
+            this.Close();
             es.ShowDialog();
-            this.Close();    
         }
 
         private void Button_Consumer_Serviece(object sender, RoutedEventArgs e)
         {
-
+            ConsumersSystem cs = new ConsumersSystem();
+            this.Close();
+            cs.ShowDialog();
         }
 
-        private void Button_Operating_System(object sender, RoutedEventArgs e)
+        private void Button_Exit(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void Button_Managment(object sender, RoutedEventArgs e)
         {
-
+            ManagmentSystem ms = new ManagmentSystem();
+            this.Close();
+            ms.ShowDialog();
         }
     }
 }

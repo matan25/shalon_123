@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id_Clients" />
           </Key>
-          <Property Name="Id_Clients" Type="int" Nullable="false" />
+          <Property Name="Id_Clients" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="company_id" Type="int" Nullable="false" />
           <Property Name="factory_occupation_id" Type="int" Nullable="false" />
           <Property Name="Buissnes Priority" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -43,7 +43,7 @@
           </Key>
           <Property Name="Id_Employee_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="salary" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="salary" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Expends_Report">
           <Key>
@@ -52,7 +52,7 @@
           <Property Name="Id_Expends_Report" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="expends_type_id" Type="int" Nullable="false" />
           <Property Name="note" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="date" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="value" Type="int" Nullable="false" />
           <Property Name="employee_id" Type="int" Nullable="false" />
         </EntityType>
@@ -67,27 +67,26 @@
           <Key>
             <PropertyRef Name="Id_Factory_Occupation" />
           </Key>
-          <Property Name="Id_Factory_Occupation" Type="int" Nullable="false" />
-          <Property Name="factory_occupation_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Factory_Occupation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="factory_occupation_name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Machines">
           <Key>
             <PropertyRef Name="Id_Machines" />
           </Key>
-          <Property Name="Id_Machines" Type="int" Nullable="false" />
+          <Property Name="Id_Machines" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="kind" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Manufacture_Department" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="work_shifts_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="work_shifts_id" Type="int" Nullable="false" />
           <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Order Details">
           <Key>
             <PropertyRef Name="Id_Order_Details" />
           </Key>
-          <Property Name="Id_Order_Details" Type="int" Nullable="false" />
+          <Property Name="Id_Order_Details" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Order Date" Type="datetime" Nullable="false" />
           <Property Name="Delivery Date" Type="datetime" Nullable="false" />
-          <Property Name="Machines_Id" Type="int" Nullable="false" />
           <Property Name="production amount" Type="int" Nullable="false" />
           <Property Name="products_id" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -115,16 +114,16 @@
           <Key>
             <PropertyRef Name="Id_Products" />
           </Key>
-          <Property Name="Id_Products" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Products" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
           <Property Name="deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Provided_Products">
           <Key>
             <PropertyRef Name="Id_Provided_Products" />
           </Key>
-          <Property Name="Id_Provided_Products" Type="int" Nullable="false" />
+          <Property Name="Id_Provided_Products" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
           <Property Name="deleted" Type="int" Nullable="false" />
@@ -145,14 +144,14 @@
           <Key>
             <PropertyRef Name="Id_Provider_Name" />
           </Key>
-          <Property Name="Id_Provider_Name" Type="int" Nullable="false" />
+          <Property Name="Id_Provider_Name" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="provider_name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Work_Shifts">
           <Key>
             <PropertyRef Name="Id_Work_Shifts" />
           </Key>
-          <Property Name="Id_Work_Shifts" Type="int" Nullable="false" />
+          <Property Name="Id_Work_Shifts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Workindg_Date" Type="datetime" Nullable="false" />
           <Property Name="Workers _Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Shift_Manager" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -262,19 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order Details_Machines">
-          <End Role="Machines" Type="Self.Machines" Multiplicity="1" />
-          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Machines">
-              <PropertyRef Name="Id_Machines" />
-            </Principal>
-            <Dependent Role="Order Details">
-              <PropertyRef Name="Machines_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order Details_Products">
+        <Association Name="FK_Order_Details_Products">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
           <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
           <ReferentialConstraint>
@@ -310,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Orders_Order Details">
+        <Association Name="FK_Orders_Order_Details">
           <End Role="Order Details" Type="Self.Order Details" Multiplicity="1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
@@ -408,11 +395,7 @@
             <End Role="Work_Shifts" EntitySet="Work_Shifts" />
             <End Role="Machines" EntitySet="Machines" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order Details_Machines" Association="Self.FK_Order Details_Machines">
-            <End Role="Machines" EntitySet="Machines" />
-            <End Role="Order Details" EntitySet="Order Details" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order Details_Products" Association="Self.FK_Order Details_Products">
+          <AssociationSet Name="FK_Order_Details_Products" Association="Self.FK_Order_Details_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="Order Details" EntitySet="Order Details" />
           </AssociationSet>
@@ -424,7 +407,7 @@
             <End Role="employee" EntitySet="employee" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Orders_Order Details" Association="Self.FK_Orders_Order Details">
+          <AssociationSet Name="FK_Orders_Order_Details" Association="Self.FK_Orders_Order_Details">
             <End Role="Order Details" EntitySet="Order Details" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
@@ -507,10 +490,6 @@
             <End Role="Work_Shifts" EntitySet="Work_Shifts" />
             <End Role="Machines" EntitySet="Machines" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Details_Machines" Association="Database1Model.FK_Order_Details_Machines">
-            <End Role="Machines" EntitySet="Machines" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
-          </AssociationSet>
           <AssociationSet Name="FK_Order_Details_Products" Association="Database1Model.FK_Order_Details_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="Order_Details" EntitySet="Order_Details" />
@@ -532,7 +511,7 @@
           <Key>
             <PropertyRef Name="Id_Clients" />
           </Key>
-          <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+          <Property Name="Id_Clients" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="company_id" Type="Int32" Nullable="false" />
           <Property Name="factory_occupation_id" Type="Int32" Nullable="false" />
           <Property Name="Buissnes_Priority" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -576,7 +555,7 @@
           </Key>
           <Property Name="Id_Employee_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="salary" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
           <NavigationProperty Name="employee" Relationship="Database1Model.FK_employee_employee_type" FromRole="employee_type" ToRole="employee" />
         </EntityType>
         <EntityType Name="Expends_Report">
@@ -586,7 +565,7 @@
           <Property Name="Id_Expends_Report" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="expends_type_id" Type="Int32" Nullable="false" />
           <Property Name="note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="value" Type="Int32" Nullable="false" />
           <Property Name="employee_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="employee" Relationship="Database1Model.FK_Expends_Report_employee" FromRole="Expends_Report" ToRole="employee" />
@@ -604,34 +583,31 @@
           <Key>
             <PropertyRef Name="Id_Factory_Occupation" />
           </Key>
-          <Property Name="Id_Factory_Occupation" Type="Int32" Nullable="false" />
-          <Property Name="factory_occupation_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Factory_Occupation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="factory_occupation_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Clients" Relationship="Database1Model.FK_Clients_Factory_Occupation" FromRole="Factory_Occupation" ToRole="Clients" />
         </EntityType>
         <EntityType Name="Machines">
           <Key>
             <PropertyRef Name="Id_Machines" />
           </Key>
-          <Property Name="Id_Machines" Type="Int32" Nullable="false" />
+          <Property Name="Id_Machines" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="kind" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Manufacture_Department" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="work_shifts_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="work_shifts_id" Type="Int32" Nullable="false" />
           <Property Name="Deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Work_Shifts" Relationship="Database1Model.FK_Machines_Work_Shifts" FromRole="Machines" ToRole="Work_Shifts" />
-          <NavigationProperty Name="Order_Details" Relationship="Database1Model.FK_Order_Details_Machines" FromRole="Machines" ToRole="Order_Details" />
         </EntityType>
         <EntityType Name="Order_Details">
           <Key>
             <PropertyRef Name="Id_Order_Details" />
           </Key>
-          <Property Name="Id_Order_Details" Type="Int32" Nullable="false" />
+          <Property Name="Id_Order_Details" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Delivery_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Machines_Id" Type="Int32" Nullable="false" />
           <Property Name="production_amount" Type="Int32" Nullable="false" />
           <Property Name="products_id" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Machines" Relationship="Database1Model.FK_Order_Details_Machines" FromRole="Order_Details" ToRole="Machines" />
           <NavigationProperty Name="Products" Relationship="Database1Model.FK_Order_Details_Products" FromRole="Order_Details" ToRole="Products" />
           <NavigationProperty Name="Orders" Relationship="Database1Model.FK_Orders_Order_Details" FromRole="Order_Details" ToRole="Orders" />
         </EntityType>
@@ -662,9 +638,9 @@
           <Key>
             <PropertyRef Name="Id_Products" />
           </Key>
-          <Property Name="Id_Products" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Products" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
           <Property Name="deleted" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Order_Details" Relationship="Database1Model.FK_Order_Details_Products" FromRole="Products" ToRole="Order_Details" />
         </EntityType>
@@ -672,7 +648,7 @@
           <Key>
             <PropertyRef Name="Id_Provided_Products" />
           </Key>
-          <Property Name="Id_Provided_Products" Type="Int32" Nullable="false" />
+          <Property Name="Id_Provided_Products" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="product_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="Int32" Nullable="false" />
           <Property Name="deleted" Type="Int32" Nullable="false" />
@@ -697,7 +673,7 @@
           <Key>
             <PropertyRef Name="Id_Provider_Name" />
           </Key>
-          <Property Name="Id_Provider_Name" Type="Int32" Nullable="false" />
+          <Property Name="Id_Provider_Name" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="provider_name1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Provider_Details" Relationship="Database1Model.FK_Provider_Details_Provider_Name" FromRole="Provider_Name" ToRole="Provider_Details" />
         </EntityType>
@@ -705,7 +681,7 @@
           <Key>
             <PropertyRef Name="Id_Work_Shifts" />
           </Key>
-          <Property Name="Id_Work_Shifts" Type="Int32" Nullable="false" />
+          <Property Name="Id_Work_Shifts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Workindg_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Workers__Amount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Shift_Manager" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -853,18 +829,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Details_Machines">
-          <End Type="Database1Model.Machines" Role="Machines" Multiplicity="1" />
-          <End Type="Database1Model.Order_Details" Role="Order_Details" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Machines">
-              <PropertyRef Name="Id_Machines" />
-            </Principal>
-            <Dependent Role="Order_Details">
-              <PropertyRef Name="Machines_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Order_Details_Products">
           <End Type="Database1Model.Products" Role="Products" Multiplicity="1" />
           <End Type="Database1Model.Order_Details" Role="Order_Details" Multiplicity="*" />
@@ -1008,7 +972,6 @@
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="products_id" ColumnName="products_id" />
                 <ScalarProperty Name="production_amount" ColumnName="production amount" />
-                <ScalarProperty Name="Machines_Id" ColumnName="Machines_Id" />
                 <ScalarProperty Name="Delivery_Date" ColumnName="Delivery Date" />
                 <ScalarProperty Name="Order_Date" ColumnName="Order Date" />
                 <ScalarProperty Name="Id_Order_Details" ColumnName="Id_Order_Details" />

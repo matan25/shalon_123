@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApplication8.ManagmentEnviornement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="ManagmentEnviornement" Height="500" Width="500">
+    <Grid Background="#FFE2640E">
+        <Label Content="Managment Enviorenment:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,22,0,0" Height="59" Width="327" FontSize="22" FontFamily="Showcard Gothic"/>
+        <Button Content="Add New Expense" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="131,108,0,0" Height="73" Click="Button_Add_Expense" FontSize="18"/>
+        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Margin="105,232,0,0" Height="121" Content="Report-Shalon Expenses&#xD;&#xA;(per month)" Click="Button_Expenses_Table" FontSize="18"/>
+        <Button Content="Exit!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Margin="147,394,0,0" Height="58" Click="Button_Exit" FontSize="18"/>
+    </Grid>
+</Window>

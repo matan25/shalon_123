@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApplication8.AddUpdateConsumer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="AddUpdateConsumer" Height="300" Width="300">
+    <Grid Background="#FFFD5A0E">
+        <Label Content="Choose:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="111" Margin="74,33,0,0" FontSize="20" FontFamily="Showcard Gothic"/>
+        <Button Content="Add New Client" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="85,102,0,0" Height="44" Click="Button_Add"/>
+        <Button Content="Update Client Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="85,167,0,0" Height="44" Click="Button_Update"/>
+
+    </Grid>
+</Window>

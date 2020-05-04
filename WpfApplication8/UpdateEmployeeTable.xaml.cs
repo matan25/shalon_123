@@ -26,23 +26,11 @@ namespace WpfApplication8
         {
             this.db = db1;
             var results = from table1 in db.employee.AsEnumerable()
-                          join table2 in db1.Workers_Gender.AsEnumerable() on (int)table1.Gender_Id equals (int)table2.Id_Worker_Gender
-                          join table3 in db1.Postal_Code_Worker.AsEnumerable() on (int)table1.postal_code_id equals (int)table3.Id_Postal_Code_Worker
                           select new
                           {
                               Employee_Id = (int)table1.Id_Employee,
                               Id_Number = (string)table1.id_number,
                               Name = (string)table1.name,
-                              Phone = (string)table1.phone,
-                              Deleted = (string)table1.deleted,
-                              Gender = (string)table2.Gender,
-                              /*employee_type_id = (int)table2.Id_Employee_Type,
-                              type = (string)table2.type,
-                              salary = (string)table2.salary,*/
-                            //postal_code_id = (int)table3.Id_Postal_Code_Worker,
-                              City = (string)table3.city,
-                              Street = (string)table3.street,
-                              House_Number = (string)table3.house_number
                           };
             InitializeComponent();
             this.db.SaveChanges();
@@ -53,10 +41,10 @@ namespace WpfApplication8
         private void updateGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var updateworker = ChangeType();
-            UpdateEmployeeWindow uew = new WpfApplication8.UpdateEmployeeWindow(updateworker,db,d);
+            UpdateEmployeeWindow uew = new WpfApplication8.UpdateEmployeeWindow(updateworker, db, d);
             this.db.SaveChanges();
             this.Close();
-            uew.ShowDialog(); 
+            uew.ShowDialog();
         }
 
         private employee ChangeType()
@@ -67,3 +55,4 @@ namespace WpfApplication8
         }
     }
 }
+

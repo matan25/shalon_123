@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,8 +36,22 @@ namespace WpfApplication8
 
         private void Button_Employee_Table(object sender, RoutedEventArgs e)
         {
-            ShowEmployeeTable set = new WpfApplication8.ShowEmployeeTable();
-            set.ShowDialog();
+            ShowEmployeeTable set1 = new WpfApplication8.ShowEmployeeTable();
+            set1.ShowDialog();
+        }
+
+        private void Button_Employee_Type_Table(object sender, RoutedEventArgs e)
+        {
+            ShowEmployeeTypeTable set2 = new WpfApplication8.ShowEmployeeTypeTable();
+            set2.ShowDialog();
+
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new WpfApplication8.MainWindow();
+            this.Close();
+            mw.ShowDialog();
         }
     }
 }

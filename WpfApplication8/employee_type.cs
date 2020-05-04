@@ -22,7 +22,7 @@ namespace WpfApplication8
     
         public int Id_Employee_Type { get; set; }
         public string type { get; set; }
-        public string salary { get; set; }
+        public int salary { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<employee> employee { get; set; }

@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApplication8.ShowProductsTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="ShowProductsTable" Height="400" Width="400">
+
+    <Grid Background="#FFE84111" Margin="0,0,-6,-4">
+        <DataGrid x:Name="ProductsDataGrid" HorizontalAlignment="Left" Height="271" VerticalAlignment="Top" Width="296" Margin="48,66,0,0" Background="#FFF5EEEE" BorderBrush="#FFF0F4F7" Foreground="#FF2576C7"/>
+        <Label Content="Products Report" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,2,0,0" Height="38" Width="232" FontFamily="Segoe UI Black" FontSize="20"/>
+
+    </Grid>
+</Window>

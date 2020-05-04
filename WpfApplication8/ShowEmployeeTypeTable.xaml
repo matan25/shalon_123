@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfApplication8.ShowEmployeeTypeTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="ShowEmployeeTypeTable" Height="412.465" Width="449.15">
+    <Grid Background="#FFF75408">
+        <DataGrid x:Name="EmployeeTypeDataGrid" HorizontalAlignment="Left" Height="292" VerticalAlignment="Top" Width="256" Margin="78,70,0,0" Foreground="#FF147DE6" FontStyle="Oblique"/>
+        <Label Content="Employee Type Table:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,25,0,0" Height="38" Width="256" FontSize="20" FontFamily="Showcard Gothic"/>
+
+    </Grid>
+</Window>

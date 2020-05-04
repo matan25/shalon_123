@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApplication8.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="400" Width="400">
+    <Grid Background="#FFF7570C">
+        <Label Content="Add Product:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,9,0,0" Height="34" Width="186" FontFamily="Showcard Gothic" FontSize="18"/>
+        <Label Content="Product Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="91" Margin="14,86,0,0"/>
+        <Label Content="Product Price:&#xD;&#xA;(min 10 nis)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="91" Margin="19,147,0,0" RenderTransformOrigin="0.464,0.816"/>
+        <Label Content="Availability:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="91" Margin="29,210,0,0"/>
+        <TextBox x:Name="name_tb" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="120,90,0,0"/>
+        <TextBox x:Name="price_tb" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="124,151,0,0"/>
+        <ComboBox x:Name="availability_cb" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="129,215,0,0">
+            <ComboBoxItem Content="Avaibale" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="None-Avaibale" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Button Content="Submit!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="140,288,0,0" Height="34" Click="Button_Add"/>
+
+    </Grid>
+</Window>

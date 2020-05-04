@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfApplication8.UpdateConsumerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication8"
+        mc:Ignorable="d"
+        Title="UpdateConsumerWindow" Height="590" Width="600">
+    <Grid Background="#FFEC1B06" Margin="0,0,-32,-19">
+        <Grid Margin="9,5,25,145" Background="#FFEE3B06">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="374*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tCompany" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" Margin="4,83,0,0"/>
+            <TextBox x:Name="tCompanyCountry" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" Margin="209,80,0,0"/>
+            <ComboBox x:Name="cPriority" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Grid.Column="2" Margin="37,136,0,0" Height="33">
+                <ComboBoxItem Content="First Priority" HorizontalAlignment="Left" Width="127" FontFamily="Showcard Gothic"/>
+                <ComboBoxItem Content="Second Priority" HorizontalAlignment="Left" Width="127" Selected="ComboBoxItem_Selected" FontFamily="Showcard Gothic"/>
+                <ComboBoxItem Content="Third Priority" HorizontalAlignment="Left" Width="127" FontFamily="Showcard Gothic"/>
+            </ComboBox>
+            <Label Content="Status:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,458,0,-99" Width="220" Height="39" FontFamily="Showcard Gothic" RenderTransformOrigin="0.5,0.5" FontSize="14" Grid.ColumnSpan="3">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.299"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.42"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <ComboBox x:Name="cStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="87,458,0,-93" Height="33" Grid.ColumnSpan="3" SelectionChanged="cStatus_SelectionChanged">
+                <ComboBoxItem Content="Active" HorizontalAlignment="Left" Width="127" FontFamily="Showcard Gothic" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Deleted" HorizontalAlignment="Left" Width="127" Selected="ComboBoxItem_Selected" FontFamily="Showcard Gothic"/>
+            </ComboBox>
+            <TextBox x:Name="tNote" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Grid.ColumnSpan="3" Margin="68,419,0,-54"/>
+            <Button Content="Submit!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Grid.Column="2" Margin="47,504,0,-135" Height="29" Click="Button_Submit"/>
+            <TextBox x:Name="tCompanyName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" Margin="4,83,0,0"/>
+
+        </Grid>
+        <Label Content="Change Client Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="285" Margin="168,5,0,0" FontSize="20" FontFamily="Showcard Gothic"/>
+        <Label Content="Company Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,48,0,0" Width="161" Height="40" FontSize="16" FontFamily="Showcard Gothic"/>
+        <Label Content="Company Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,82,0,0" Width="139" Height="40"/>
+        <Label Content="Company Country:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,81,0,0" Width="139" Height="40"/>
+        <Label Content="Company priority:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,139,0,0" Width="176" Height="39" FontSize="16" FontFamily="Showcard Gothic" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.299"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.42"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Shalon Factory Department:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,223,0,0" Width="220" Height="39" FontFamily="Showcard Gothic" RenderTransformOrigin="0.5,0.5" FontSize="14">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.299"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.42"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Notes:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,422,0,0" Width="88" Height="39" FontFamily="Showcard Gothic" RenderTransformOrigin="0.5,0.5" FontSize="14">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.299"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.42"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <CheckBox x:Name="Civilian_NBC_Masks" Content="Civilian NBC Masks" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,264,0,0" FontFamily="Showcard Gothic" Checked="cnm_Checked"/>
+        <CheckBox x:Name="Industrial_Masks" Content="Industrial Masks" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,287,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+        <CheckBox x:Name="Personal_NBC_Filters" Content="Personal NBC Filters" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,310,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+        <CheckBox x:Name="Military_NBC_Masks" Content="Military NBC Masks" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,333,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+        <CheckBox x:Name="Huto_Injectors" Content="Huto Injectors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,375,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+        <CheckBox x:Name="Collective_NBC_System" Content="Collective NBC System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,354,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+        <CheckBox x:Name="Industrial_Filters" Content="Industrial Filters" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,393,0,0" FontFamily="Showcard Gothic" IsThreeState="True"/>
+
+    </Grid>
+</Window>

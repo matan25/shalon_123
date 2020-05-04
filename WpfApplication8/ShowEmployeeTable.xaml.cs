@@ -20,7 +20,6 @@ namespace WpfApplication8
     public partial class ShowEmployeeTable : Window
     {
         Database1Entities1 db1 = new Database1Entities1();
-        EmployeeControlerr ec = new EmployeeControlerr();
         public ShowEmployeeTable()
         {
             InitializeComponent();
@@ -33,17 +32,14 @@ namespace WpfApplication8
                               Id_Number = (string)table1.id_number,
                               Name = (string)table1.name,
                               Phone = (string)table1.phone,
-                              Status = (string)table1.deleted,
+                              Deleted = (string)table1.deleted,
                               Gender = (string)table2.Gender,
-                              /*employee_type_id = (int)table2.Id_Employee_Type,
-                              type = (string)table2.type,
-                              salary = (string)table2.salary,*/
-                              //postal_code_id = (int)table3.Id_Postal_Code_Worker,
                               City = (string)table3.city,
                               Street = (string)table3.street,
                               House_Number = (string)table3.house_number
                           };
             EmployeeDataGrid.ItemsSource = results.ToList();
-        }      
+        }
     }
 }
+

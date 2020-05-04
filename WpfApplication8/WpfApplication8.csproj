@@ -81,26 +81,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddConsumer.xaml.cs">
+      <DependentUpon>AddConsumer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddExpeneseWindow.xaml.cs">
+      <DependentUpon>AddExpeneseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddUpdateConsumer.xaml.cs">
+      <DependentUpon>AddUpdateConsumer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddWorker.xaml.cs">
       <DependentUpon>AddWorker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="clientControllercs.cs" />
     <Compile Include="Clients.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ClientsServiece.xaml.cs">
-      <DependentUpon>ClientsServiece.xaml</DependentUpon>
     </Compile>
     <Compile Include="Company.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DeleteWorker.xaml.cs">
-      <DependentUpon>DeleteWorker.xaml</DependentUpon>
+    <Compile Include="ConsumerModel.cs" />
+    <Compile Include="ConsumersEnviornment.xaml.cs">
+      <DependentUpon>ConsumersEnviornment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConsumerServieceBL.cs" />
+    <Compile Include="ConsumersSystem.xaml.cs">
+      <DependentUpon>ConsumersSystem.xaml</DependentUpon>
     </Compile>
     <Compile Include="employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeController.cs" />
+    <Compile Include="EmployeeBL.cs" />
     <Compile Include="EmployeeSystem.xaml.cs">
       <DependentUpon>EmployeeSystem.xaml</DependentUpon>
     </Compile>
@@ -119,6 +132,17 @@
     <Compile Include="Machines.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MakingOrderWindow.xaml.cs">
+      <DependentUpon>MakingOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentBL1.cs" />
+    <Compile Include="ManagmentEnviornement.xaml.cs">
+      <DependentUpon>ManagmentEnviornement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentModel.cs" />
+    <Compile Include="ManagmentSystem.xaml.cs">
+      <DependentUpon>ManagmentSystem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,21 +158,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModelController.cs" />
-    <Compile Include="ModelOrder.cs" />
-    <Compile Include="orderController.cs" />
+    <Compile Include="OrderModel.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdersBL.cs" />
     <Compile Include="Order_Details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Postal_Code_Worker.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductModelcs.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductsBL.cs" />
     <Compile Include="Provided_Products.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -158,8 +183,29 @@
     <Compile Include="Provider_Name.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ShowClientsTable.xaml.cs">
+      <DependentUpon>ShowClientsTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowEmployeeTable.xaml.cs">
       <DependentUpon>ShowEmployeeTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowEmployeeTypeTable.xaml.cs">
+      <DependentUpon>ShowEmployeeTypeTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowExpensesTable.xaml.cs">
+      <DependentUpon>ShowExpensesTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowOrdersReport.xaml.cs">
+      <DependentUpon>ShowOrdersReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowProductsTable.xaml.cs">
+      <DependentUpon>ShowProductsTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateConsumerWindow.xaml.cs">
+      <DependentUpon>UpdateConsumerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateConsumerTable.xaml.cs">
+      <DependentUpon>UpdateConsumerTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateEmployeeWindow.xaml.cs">
       <DependentUpon>UpdateEmployeeWindow.xaml</DependentUpon>
@@ -167,11 +213,17 @@
     <Compile Include="UpdateEmployeeTable.xaml.cs">
       <DependentUpon>UpdateEmployeeTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="UpdateOrderTable.xaml.cs">
+      <DependentUpon>UpdateOrderTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorkersEnviornement.xaml.cs">
-      <DependentUpon>WorkersEnviornement.xaml</DependentUpon>
+    <Compile Include="UpdateOrderWindow.xaml.cs">
+      <DependentUpon>UpdateOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProductTable.xaml.cs">
+      <DependentUpon>UpdateProductTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProductWindow.xaml.cs">
+      <DependentUpon>UpdateProductWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Workers_Gender.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -179,15 +231,31 @@
     <Compile Include="Work_Shifts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="AddConsumer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddExpeneseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddUpdateConsumer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddWorker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ClientsServiece.xaml">
+    <Page Include="ConsumersEnviornment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteWorker.xaml">
+    <Page Include="ConsumersSystem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,7 +275,47 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MakingOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagmentEnviornement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagmentSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowClientsTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowEmployeeTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowEmployeeTypeTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowExpensesTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowOrdersReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowProductsTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateConsumerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateConsumerTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,17 +327,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="UpdateOrderTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WorkersEnviornement.xaml">
+    <Page Include="UpdateOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateProductTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model.cs" />
+    <Compile Include="EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -266,11 +382,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

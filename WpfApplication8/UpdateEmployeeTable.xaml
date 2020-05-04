@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:WpfApplication8"
         mc:Ignorable="d"
         Title="UpdateTable" Height="600" Width="600">
-    <Grid>
-        <DataGrid x:Name="updateGrid" HorizontalAlignment="Left" Height="318" VerticalAlignment="Top" Width="282" Margin="126,73,0,0" SelectionChanged="updateGrid_SelectionChanged"/>
+    <Grid Background="#FFDA4B08">
+        <DataGrid x:Name="updateGrid" HorizontalAlignment="Left" Height="318" VerticalAlignment="Top" Width="234" Margin="160,126,0,0" SelectionChanged="updateGrid_SelectionChanged" Foreground="#FF1479F1"/>
+        <Label Content="Choose A Worker:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="278" Margin="140,34,0,0" FontSize="20" FontFamily="Showcard Gothic"/>
 
     </Grid>
 </Window>

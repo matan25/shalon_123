@@ -23,12 +23,10 @@ namespace WpfApplication8
         public int Id_Order_Details { get; set; }
         public System.DateTime Order_Date { get; set; }
         public System.DateTime Delivery_Date { get; set; }
-        public int Machines_Id { get; set; }
         public int production_amount { get; set; }
         public int products_id { get; set; }
         public string Note { get; set; }
     
-        public virtual Machines Machines { get; set; }
         public virtual Products Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

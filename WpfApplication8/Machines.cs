@@ -14,12 +14,6 @@ namespace WpfApplication8
     
     public partial class Machines
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Machines()
-        {
-            this.Order_Details = new HashSet<Order_Details>();
-        }
-    
         public int Id_Machines { get; set; }
         public string kind { get; set; }
         public string Manufacture_Department { get; set; }
@@ -27,7 +21,5 @@ namespace WpfApplication8
         public string Deleted { get; set; }
     
         public virtual Work_Shifts Work_Shifts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_Details> Order_Details { get; set; }
     }
 }

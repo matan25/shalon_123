@@ -17,7 +17,7 @@ namespace WpfApplication8
         public int Id_Expends_Report { get; set; }
         public int expends_type_id { get; set; }
         public string note { get; set; }
-        public string date { get; set; }
+        public System.DateTime date { get; set; }
         public int value { get; set; }
         public int employee_id { get; set; }
     

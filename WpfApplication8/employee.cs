@@ -21,7 +21,19 @@ namespace WpfApplication8
             this.Orders = new HashSet<Orders>();
             this.Provider_Details = new HashSet<Provider_Details>();
         }
-    
+
+        public employee(employee e)
+        {
+            this.Id_Employee = e.Id_Employee;
+            this.id_number = e.id_number;
+            this.name = e.name;
+            this.phone = e.phone;
+            this.Gender_Id = e.Gender_Id;
+            this.employee_type_id = e.employee_type_id;
+            this.postal_code_id = e.postal_code_id;
+            this.deleted = e.deleted;
+        }
+
         public int Id_Employee { get; set; }
         public string id_number { get; set; }
         public string name { get; set; }

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="700">
+        Title="MainWindow" Height="650" Width="700">
     <Grid Margin="0,0,5,8" Background="#FFDE4F19">
         <Label Content="SHALON-CHEMICAL INDUSTRIES" HorizontalAlignment="Left" Height="123" Margin="27,31,0,0" VerticalAlignment="Top" Width="614" FontSize="36" FontFamily="Showcard Gothic"/>
         <Button Content="Employee System" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="115" Margin="50,137,0,0" FontSize="22" Click="Button_Employee_System"/>
         <Button Content="Consumer Serviece" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="115" Margin="360,135,0,0" FontSize="22" Click="Button_Consumer_Serviece"/>
-        <Button Content="Operating System" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="115" Margin="48,304,0,0" FontSize="22" Click="Button_Operating_System"/>
-        <Button Content="Managment" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="115" Margin="360,307,0,0" FontSize="22" Click="Button_Managment"/>
+        <Button Content="Exit!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="243" Height="72" Margin="195,496,0,0" FontSize="22" Click="Button_Exit" RenderTransformOrigin="0.475,0.749"/>
+        <Button Content="Managment" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="115" Margin="205,313,0,0" FontSize="22" Click="Button_Managment" RenderTransformOrigin="0.511,0.692"/>
     </Grid>
 </Window>

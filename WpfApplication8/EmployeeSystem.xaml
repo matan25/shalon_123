@@ -8,9 +8,11 @@
         Title="EmployeeSystem" Height="500" Width="500">
     <Grid Background="#FFE2640E">
         <Label Content="Employee System:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,22,0,0" Height="59" Width="225" FontSize="22" FontFamily="Showcard Gothic"/>
-        <Button Content="Add New Worker" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="6,89,0,0" Height="47" Click="Button_Add_Worker"/>
-        <Button Content="Update Worker Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="6,157,0,0" Height="50" Click="Button_Update_Worker"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="221" Margin="221,76,0,0" Height="108" Content="Show-Employee Personal Data" Click="Button_Employee_Table"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Margin="224,238,0,0" Height="99" Content="Show- Employee Type"/>
+        <Button Content="Add New Worker" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="7,106,0,0" Height="73" Click="Button_Add_Worker" FontSize="18"/>
+        <Button Content="Update Worker Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="172" Margin="7,252,0,0" Height="75" Click="Button_Update_Worker" FontSize="18"/>
+        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Margin="207,77,0,0" Height="121" Content="Report-Employee Personal Data" Click="Button_Employee_Table" FontSize="18"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="207,235,0,0" Height="112" Content="Report- Employee Type" Click="Button_Employee_Type_Table" FontSize="18"/>
+        <Button Content="Exit!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Margin="147,394,0,0" Height="58" Click="Button_Exit" FontSize="18"/>
     </Grid>
 </Window>
+
